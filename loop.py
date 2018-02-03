@@ -31,10 +31,10 @@ while (True):
             elif len(x) > 0:
                     print('wrong number of bytes, input ignored')
         else:
-            #time.sleep(0.001)
+            time.sleep(0.001)
             cnt = cnt + 1
-            if cnt == 200:
-                ser.write(serial.to_bytes([0x81, 0x81, 0x82, 0xff, 0x0a]))
             if cnt == 500:
+                ser.write(serial.to_bytes([0x81, 0x81, 0x82, 0xff, 0x0a]))
+            if cnt == 1500:
                 cnt = 0
                 ser.write(serial.to_bytes([0x80, 0x81, 0x82, 0xfe, 0x0a]))
