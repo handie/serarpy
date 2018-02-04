@@ -1,0 +1,85 @@
+{
+  "units": [
+{
+name": "unipi1",
+      "type": "unipi",
+      "host": "192.168.1.100",
+      "port": "80",
+      "dev": 
+          {
+            "input": {
+              "circuit": 
+                {
+                  "5": {
+                    "onHold": {
+                      "actions":[
+                        {"action": "dim","unit": "unipi1","dev": "ao","circuit": "1"}
+                        ]
+                      }                                            
+                    },
+                  "2": {
+                    "onTrue": {
+                      "actions":[
+                        {"action": "switch","unit": "unipi1","dev": "relay","circuit": "1","value": "0"},
+                        {"action": "switch","unit": "unipi1","dev": "relay","circuit": "8","value": "0"}
+                        ]
+                      }
+                    },                                      
+                  "1": {
+                    "onTrue": {
+                      "actions":[
+                        {"action": "toggle","unit": "unipi1","dev": "relay","circuit": "1","value": "0"}
+                        ]
+                      }
+                    }                                      
+
+                }
+              
+            },
+            "ai": {}
+          }          
+        
+    },
+{
+      "name": "dummy",
+      "type": "unipi",
+      "host": "127.0.0.1",
+      "port": "9020",
+      "dev": 
+          {
+            "input": {
+              "circuit": 
+                {
+                  "1": {
+                    "onClick": {
+                      "actions":[
+                      	{"action": "switch","unit": "unipi1","dev": "relay","circuit": "1","value": 0},
+                      	{"action": "switch","unit": "unipi1","dev": "relay","circuit": "2","value": 0},
+                      	{"action": "switch","unit": "unipi1","dev": "relay","circuit": "3","value": 0},
+                      	{"action": "switch","unit": "unipi1","dev": "relay","circuit": "4","value": 0},
+                      	{"action": "switch","unit": "unipi1","dev": "relay","circuit": "5","value": 0},
+                      	{"action": "switch","unit": "unipi1","dev": "relay","circuit": "6","value": 0},
+                      	{"action": "switch","unit": "unipi1","dev": "relay","circuit": "7","value": 0},
+                      	{"action": "switch","unit": "unipi1","dev": "relay","circuit": "8","value": 0}
+                        ]
+                      }
+                    },
+                  "2": {
+                    "onTrue": {
+                      "actions":[
+                        {"action": "switch","unit": "unipi1","dev": "relay","circuit": "1","value": 1},
+                        {"action": "switch","unit": "unipi1","dev": "relay","circuit": "3","value": 1},
+                        {"action": "switch","unit": "unipi1","dev": "relay","circuit": "5","value": 1},
+                        {"action": "switch","unit": "unipi1","dev": "relay","circuit": "7","value": 1}
+                        ]
+                      }
+                    }                                      
+                }
+              
+            },
+            "ai": {}
+          }          
+        
+    }        
+  ]
+}
